@@ -5,6 +5,7 @@
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #2F303A;
     --nav-button-color: #2196F3;
+    --transition-primary: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,h2,h3,h4,p {
@@ -58,8 +59,6 @@ body {
 }
 
 .page-header {
-    padding-top: 24px;
-    padding-bottom: 25px;
     border-bottom: 1px solid #ECECEC;
 }
 
@@ -90,12 +89,12 @@ body {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    transition: var(--transition-primary);
 }
 
 .menu, .menu-contacts {
     display: flex;
     gap: 50px;
-    
 }
 
 .header-mail,
@@ -107,11 +106,35 @@ body {
     color: var(--accent-color);
     display: flex;
     align-items: center;
+    transition: var(--transition-primary);
 }
 
 .icon {
     fill: currentColor;
     margin-right: 10px;
+}
+
+.menu-item {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.menu-link::after,
+.menu-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    transition: var(--transition-primary);
+}
+
+.menu-link:hover::after,
+.menu-link:focus::after {
+    background-color: var(--nav-button-color)
 }
 
 /* Hover-focus */
@@ -241,6 +264,34 @@ body {
     margin-bottom: 50px;
 }
 
+.benefits-list-li {
+    position: relative;
+}
+
+.benefits-overlay {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    width: 100%;
+    background-color: rgba(47, 48, 58, 0.8);;
+    position: absolute;
+    bottom: 0%;
+}
+
+.desktop-app {
+    padding: 27px 107px;
+}
+
+.mobile-app {
+    padding: 27px 112px;
+}
+
+.designe-app {
+    padding: 27px 94px;
+}
+
 /* Section team */
 .main-section-team {
     background-color: #F5F4FA;
@@ -293,6 +344,7 @@ body {
     height: 44px;
     border-radius: 50%;
     background-color: var(--primary-bg-color);
+    transition: var(--transition-primary);
 }
 
 .social-list-link:hover,
@@ -323,7 +375,8 @@ body {
     background-size: cover;
     width: 106px;
     height: 60px;
-    fill: #AFB1B8
+    fill: #AFB1B8;
+    transition: var(--transition-primary);
 }
 
 .clients-list {
@@ -342,6 +395,7 @@ body {
     border-radius: 4px;
     border-width: 1px;
     border-color: rgba(175, 177, 184, 1);
+    transition: var(--transition-primary);
 }
 
 .clients-link:hover,
@@ -400,6 +454,7 @@ body {
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
     display: inline-block;
+    transition: var(--transition-primary);
     
 }
 
@@ -430,6 +485,7 @@ body {
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--transition-primary);
 }
 
 .footer-title-list {
@@ -443,6 +499,7 @@ body {
     width: 20px;
     height: 20px;
     fill: var(--primary-bg-color);
+    transition: var(--transition-primary);
 }
 
 .footer-list-link:hover,
@@ -482,6 +539,7 @@ body {
     border-color: transparent;
     border-radius: 4px;
     padding: 6px 22px;
+    transition: var(--transition-primary);
 }
 
 .button-all {
@@ -536,6 +594,7 @@ body {
     color: inherit;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .portfolio-list-link:hover,
