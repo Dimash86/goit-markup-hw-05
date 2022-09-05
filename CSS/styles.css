@@ -82,14 +82,29 @@ body {
     color: black;
 }
 
-.menu-item .menu-link {
+.menu-item > .current {
+    color: var(--nav-button-color);
+}
+
+.current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    background-color: var(--nav-button-color);
+}
+
+.menu-item, .menu-link {
     color: var(--primary-text-color);
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    transition: var(--transition-primary);
+    transition: color var(--transition-primary);
 }
 
 .menu, .menu-contacts {
@@ -120,7 +135,6 @@ body {
     padding-bottom: 32px;
 }
 
-.menu-link::after,
 .menu-link::after {
     content: "";
     display: block;
@@ -269,27 +283,19 @@ body {
 }
 
 .benefits-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--secondary-text-color);
     width: 100%;
+    height: 70px;
     background-color: rgba(47, 48, 58, 0.8);;
     position: absolute;
     bottom: 0%;
-}
-
-.desktop-app {
-    padding: 27px 107px;
-}
-
-.mobile-app {
-    padding: 27px 112px;
-}
-
-.designe-app {
-    padding: 27px 94px;
 }
 
 /* Section team */
@@ -455,8 +461,7 @@ body {
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
     display: inline-block;
-    transition: var(--transition-primary);
-    
+    transition: color var(--transition-primary);
 }
 
 .footer-auth {
@@ -466,6 +471,7 @@ body {
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
     display: inline-block;
+    transition: color var(--transition-primary);
 }
 
 .footer-title {
@@ -507,13 +513,6 @@ body {
 .footer-list-link:focus,
 .footer-list-link:active {
     background-color: var(--nav-button-color);
-    outline-color: var(--nav-button-color);
-}
-
-.footer-list-link:hover .icon-footer-links,
-.footer-list-link:focus .icon-footer-links, 
-.footer-list-link:active .icon-footer-links {
-    background-color: var(--nav-button-color);
 }
 
 /* Portfolio*/
@@ -553,11 +552,6 @@ body {
     padding: 6px 22px;
 }
 
-.button-applications {
-    min-width: 112px;
-    padding: 6px 22px;
-}
-
 .button-designe {
     min-width: 103px;
     padding: 6px 22px;
@@ -573,7 +567,6 @@ body {
 .portfolio-button:focus {
     background-color: #2196F3;
     color: var(--secondary-text-color);
-    outline-color: var(--nav-button-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -595,6 +588,7 @@ body {
     color: inherit;
     display: flex;
     flex-direction: column;
+    transition: box-shadow var(--transition-primary);
 }
 
 .portfolio-list-wrapper {
@@ -625,7 +619,7 @@ body {
     padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
     color: var(--secondary-text-color);
-    transform: translateY(100%);
+    transform: translateY(101%);
     transition: var(--transition-primary);
 }
 
@@ -669,7 +663,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    
+    transition: opacity var(--transition-primary), visibility var(--transition-primary);
 }
 
 .backdrop.is-hidden {
