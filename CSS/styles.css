@@ -539,7 +539,7 @@ body {
     border-color: transparent;
     border-radius: 4px;
     padding: 6px 22px;
-    transition: var(--transition-primary);
+    transition: background-color var(--transition-primary);
 }
 
 .button-all {
